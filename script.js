@@ -11,7 +11,7 @@ const contentData = {
                         <i data-lucide="instagram"></i>
                         <span>Instagram</span>
                     </a>
-                    <a href="https://yourstore.tebex.io" target="_blank" class="social-btn store">
+                    <a href="https://our-scripts-store.tebex.io" target="_blank" class="social-btn store">
                         <i data-lucide="shopping-bag"></i>
                         <span>Store</span>
                     </a>
@@ -53,7 +53,7 @@ const contentData = {
                     <a href="https://www.youtube.com/watch?v=your-video" target="_blank" class="btn-link youtube">
                         <i data-lucide="play-circle"></i> Video Showcase
                     </a>
-                    <a href="https://your-store.tebex.io" target="_blank" class="btn-link store">
+                    <a href="https://our-scripts-store.tebex.io" target="_blank" class="btn-link store">
                         <i data-lucide="shopping-bag"></i> Buy Now
                     </a>
                     <a href="https://discord.gg/9DbRGCts5W" target="_blank" class="btn-link discord">
@@ -196,7 +196,7 @@ Config.Rules = {
                     <a href="https://www.youtube.com/watch?v=your-video" target="_blank" class="btn-link youtube">
                         <i data-lucide="play-circle"></i> Video Showcase
                     </a>
-                    <a href="https://your-store.tebex.io" target="_blank" class="btn-link store">
+                    <a href="https://our-scripts-store.tebex.io" target="_blank" class="btn-link store">
                         <i data-lucide="shopping-bag"></i> Buy Now
                     </a>
                     <a href="https://discord.gg/9DbRGCts5W" target="_blank" class="btn-link discord">
