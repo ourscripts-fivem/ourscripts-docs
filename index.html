@@ -13,6 +13,22 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="dark-theme">
+    <!-- Mobile overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- Mobile top bar -->
+    <div class="mobile-topbar">
+        <div class="mobile-topbar-left">
+            <img src="assets/logo.png" alt="Logo" class="logo">
+            <span class="brand-name">Our Scripts</span>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
     <div class="app-container">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -95,6 +111,18 @@
         </main>
     </div>
 
+    <script>
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.getElementById('mobile-overlay');
+            sidebar.classList.toggle('mobile-open');
+            overlay.classList.toggle('active');
+        }
+        document.getElementById('mobile-overlay').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.remove('mobile-open');
+            this.classList.remove('active');
+        });
+    </script>
     <script src="script.js?v=1.0.2"></script>
     <script>
         lucide.createIcons();
