@@ -3,7 +3,7 @@ const contentData = {
         title: 'Our Scripts',
         html: `
             <div class="home-page content-fade-in">
-                <img src="assets/logo.png?v=1.0.5" alt="Logo" class="home-logo" onerror="this.src='https://via.placeholder.com/120/1e293b/ffffff?text=OS'">
+                <img src="assets/logo.png?v=2.0" alt="Logo" class="home-logo" onerror="this.src='https://via.placeholder.com/120/1e293b/ffffff?text=OS'">
                 <h1 class="home-title">Our Scripts</h1>
                 <p class="home-subtitle">High-end FiveM ESX scripts engineered for performance, security, and the ultimate player experience.</p>
                 <div class="social-links">
