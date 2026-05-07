@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Scripts | Documentation</title>
-    <link rel="stylesheet" href="styles.css?v=2.0">
+    <link rel="stylesheet" href="styles.css?v=2.1">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
         <aside class="sidebar">
             <div class="sidebar-header" id="header-logo">
                 <div class="logo-container">
-                    <img src="assets/logo.png?v=2.0" alt="Logo" class="logo" id="main-logo" 
+                    <img src="assets/logo.png?v=2.1" alt="Logo" class="logo" id="main-logo" 
                          onload="this.style.display='block'; document.getElementById('logo-placeholder').style.display='none';" 
                          onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex';">
                     <div id="logo-placeholder" class="logo-placeholder" style="display:none;">OS</div>
@@ -76,6 +76,19 @@
                             <li data-target="our_escmenu-intro">Introduction</li>
                             <li data-target="our_escmenu-install">Installation</li>
                             <li data-target="our_escmenu-config">Configuration</li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-category" data-script="our_garage">
+                        <div class="category-header">
+                            <i data-lucide="warehouse"></i>
+                            <span>Garage</span>
+                            <i data-lucide="chevron-right" class="chevron"></i>
+                        </div>
+                        <ul class="subcategories">
+                            <li data-target="our_garage-intro">Introduction</li>
+                            <li data-target="our_garage-install">Installation</li>
+                            <li data-target="our_garage-config">Configuration</li>
                         </ul>
                     </li>
 
@@ -123,7 +136,7 @@
             this.classList.remove('active');
         });
     </script>
-    <script src="script.js?v=2.0"></script>
+    <script src="script.js?v=2.1"></script>
     <script>
         lucide.createIcons();
     </script>
