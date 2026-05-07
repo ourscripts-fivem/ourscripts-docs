@@ -340,12 +340,9 @@ Config.CurrencySymbol = '$'</code></pre>
             <div class="page-header content-fade-in">
                 <div class="badge badge-warning">ESX Only</div>
                 <h1>Garage System</h1>
-                <p>A complete and modern garage management system for ESX servers, with an integrated admin panel for full control over your server's vehicles.</p>
+                <p>A modern, secure and feature-rich vehicle management system for ESX servers. Drop it in, point your players at it, and you're done — no SQL editing, no console commands, no resource restarts to add a garage.</p>
                 
                 <div class="quick-links">
-                    <a href="https://www.youtube.com/watch?v=your-video" target="_blank" class="btn-link youtube">
-                        <i data-lucide="play-circle"></i> Video Showcase
-                    </a>
                     <a href="https://our-scripts-store.tebex.io" target="_blank" class="btn-link store">
                         <i data-lucide="shopping-bag"></i> Buy Now
                     </a>
@@ -354,7 +351,7 @@ Config.CurrencySymbol = '$'</code></pre>
                     </a>
                 </div>
             </div>
-            
+
             <div class="section-title content-fade-in">
                 <h2>📸 Visual Showcase</h2>
                 <p>A clean, modern interface for managing player vehicles.</p>
@@ -363,19 +360,21 @@ Config.CurrencySymbol = '$'</code></pre>
             <div class="card content-fade-in shadow-accent flagship-card">
                 <div class="flagship-content">
                     <div class="flagship-text">
-                        <div class="badge">Garage UI</div>
+                        <div class="badge">Player UI</div>
                         <h3>Complete Vehicle Management</h3>
-                        <p>Players get a full overview of their vehicles with real-time stats including engine, body, and fuel levels. Includes search, category filters, favorites, and live status indicators (Outside, Impounded, On the way).</p>
+                        <p>Players get a full overview of their vehicles with real-time engine, body and fuel stats. Filter by All / Cars / Motorcycles / Favorites, search by name, see live status badges (Outside, Impounded, On the way) and request a paid valet delivery.</p>
                         <ul class="feature-list-check small">
-                            <li>Real-time vehicle stats</li>
-                            <li>Search and category filtering</li>
-                            <li>Favorites system</li>
+                            <li>Real-time Engine, Body &amp; Fuel bars</li>
+                            <li>Search + category filters + Favorites</li>
                             <li>Live status indicators</li>
-                            <li>Showroom preview, Rename and Transfer</li>
+                            <li>Valet delivery service</li>
+                            <li>Showroom 360° preview</li>
+                            <li>Rename &amp; Transfer</li>
+                            <li>Mileage (km / mi) tracking</li>
                         </ul>
                     </div>
                     <div class="flagship-media">
-                        <img src="assets/garage1.png" class="content-img" alt="Garage UI">
+                        <img src="assets/garage1.png?v=2.1" class="content-img" alt="Garage Player UI">
                     </div>
                 </div>
             </div>
@@ -384,18 +383,46 @@ Config.CurrencySymbol = '$'</code></pre>
                 <div class="flagship-content">
                     <div class="flagship-text">
                         <div class="badge">Admin Panel</div>
-                        <h3>Built-in Admin Control</h3>
-                        <p>Full server overview with statistics for total vehicles, stored, out, and impounded. Manage Players, Factions, Garages, and Logs - all from one clean interface.</p>
+                        <h3>Full In-Game Admin Control</h3>
+                        <p>Open with <code>/garageadmin</code>. The right pane shows a live Server Overview. The left sidebar gives you four sections: Players, Factions, Garages and Logs — all without restarting the resource.</p>
                         <ul class="feature-list-check small">
-                            <li>Server overview dashboard</li>
-                            <li>Player vehicle management</li>
-                            <li>Faction garage support</li>
-                            <li>Action logs</li>
+                            <li>Live server stats (total / stored / out / impounded)</li>
+                            <li>Teleport, return or delete any vehicle</li>
+                            <li>Add &amp; edit garages live with coordinate capture</li>
+                            <li>Searchable transaction logs (last 500 entries)</li>
+                            <li>Per-action permission groups</li>
                         </ul>
                     </div>
                     <div class="flagship-media">
-                        <img src="assets/garage2.png" class="content-img" alt="Admin Panel">
+                        <img src="assets/garage2.png?v=2.1" class="content-img" alt="Admin Panel">
                     </div>
+                </div>
+            </div>
+
+            <div class="feature-grid-simple content-fade-in">
+                <div class="card">
+                    <h3>🚗 3 Garage Types</h3>
+                    <p><strong>Personal</strong> — any player. <strong>Faction</strong> — job-restricted, shared among members. <strong>Private</strong> — specific identifiers / whitelist.</p>
+                </div>
+                <div class="card">
+                    <h3>🚤 All Vehicle Types</h3>
+                    <p>Cars &amp; motorcycles, <strong>boats</strong> (with water spawn point), <strong>helicopters</strong> and <strong>planes</strong> — each with their own blip, marker and storage flow.</p>
+                </div>
+                <div class="card">
+                    <h3>🔌 Fuel &amp; Notify Bridge</h3>
+                    <p>Auto-detects <code>ox_fuel</code>, <code>LegacyFuel</code>, <code>ps-fuel</code>, <code>cdn-fuel</code> or falls back to GTA native. Works with <code>our_notify</code>, <code>okokNotify</code> or ESX notify.</p>
+                </div>
+                <div class="card">
+                    <h3>🌍 Multi-Language</h3>
+                    <p>English, Czech, German, French, Spanish and Italian included out of the box. All player-facing strings are keyed — add a new language with one file.</p>
+                </div>
+                <div class="card">
+                    <h3>🛡 Hardened Security</h3>
+                    <p>Server-side ownership checks on every event. Server-trusted valet quotes — clients cannot forge price/time. Race-locked impound retrieval. Lua-injection-safe admin garage editor.</p>
+                </div>
+                <div class="card">
+                    <h3>📡 Discord Logging</h3>
+                    <p>Colour-coded embeds for spawn, store, transfer, repair, valet, admin actions and new-vehicle detection. Configure via <code>Config.DiscordLogs</code>.</p>
                 </div>
             </div>
         `
@@ -405,28 +432,45 @@ Config.CurrencySymbol = '$'</code></pre>
         html: `
             <div class="page-header content-fade-in">
                 <h1>Installation</h1>
-                <p>Follow these steps to install the Garage system correctly.</p>
+                <p>Quick setup in under 5 minutes. The script reuses the standard ESX <code>owned_vehicles</code> table — no extra schema needed for existing vehicles.</p>
             </div>
 
             <div class="card content-fade-in">
-                <h3>1. Prerequisites</h3>
-                <p>Ensure you have the following dependencies installed:</p>
+                <h3>1. Dependencies</h3>
+                <p>Make sure these are running on your server before adding <code>our_garage</code>:</p>
                 <ul class="feature-list-check small">
-                    <li><strong>es_extended</strong> - Core framework</li>
-                    <li><strong>oxmysql</strong> - Database driver</li>
+                    <li><strong>es_extended</strong> — ESX Legacy or compatible fork</li>
+                    <li><strong>oxmysql</strong> — used for all DB I/O</li>
+                    <li><strong>our_notify</strong> — optional, configurable notify backend</li>
+                    <li><strong>our_textui</strong> — optional, configurable text-UI backend</li>
+                    <li>Any fuel resource — <code>ox_fuel</code>, <code>LegacyFuel</code>, <code>ps-fuel</code>, <code>cdn-fuel</code> (optional, auto-detected)</li>
                 </ul>
             </div>
 
             <div class="card content-fade-in">
-                <h3>2. Database Setup</h3>
-                <p>Import the provided <code>install.sql</code> file into your database.</p>
+                <h3>2. Copy the resource</h3>
+                <p>Drop the <code>our_garage</code> folder into your <code>resources/</code> directory.</p>
             </div>
 
             <div class="card content-fade-in">
-                <h3>3. Deployment</h3>
-                <p>Extract the <code>our_garage</code> folder into your server's <code>resources</code> directory.</p>
-                <p>Add the following line to your <code>server.cfg</code>:</p>
-                <pre><code>ensure our_garage</code></pre>
+                <h3>3. Import the database</h3>
+                <p>Run the bundled SQL file once to create the audit-log table:</p>
+                <pre><code>SOURCE garage_logs.sql;</code></pre>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>4. Add to server.cfg</h3>
+                <p>Add <code>our_garage</code> <strong>after</strong> <code>es_extended</code> and <code>oxmysql</code>:</p>
+                <pre><code>ensure oxmysql
+ensure es_extended
+ensure our_garage</code></pre>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>5. Verify startup</h3>
+                <p>Restart your server. Confirm this line appears in the console:</p>
+                <pre><code>[our_garage] - Script initialized successfully! Version: X.Y.Z</code></pre>
+                <p>Then open the admin panel with <code>/garageadmin</code> and add your first garage live — no restart needed.</p>
             </div>
         `
     },
@@ -435,22 +479,102 @@ Config.CurrencySymbol = '$'</code></pre>
         html: `
             <div class="page-header content-fade-in">
                 <h1>Configuration</h1>
-                <p>Customize the Garage system to match your server's needs.</p>
+                <p>All settings live in <code>config.lua</code>. The file is fully editable and never overwritten by updates.</p>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>Basic Settings</h3>
+                <pre class="selectable"><code>Config.Locale = 'en'             -- 'en','cs','de','es','fr','it'
+Config.Theme = 'grey'            -- 'grey','white','black','clean'
+Config.GreyModeColor = '#00b7ff' -- accent colour for grey theme
+Config.NotifySystem = 'our_notify'  -- 'okok','esx','our_notify','custom'
+Config.TextUI = 'our_textui'        -- 'our_textui','esx'
+Config.FuelSystem = 'auto'          -- auto / ox_fuel / legacyfuel / ps-fuel / cdn-fuel / native
+Config.SmartImpound = false         -- lock retrieval to the impound that towed the vehicle</code></pre>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>Fees</h3>
+                <pre class="selectable"><code>Config.TransferFee = 5000        -- transfer vehicle to another player
+Config.ImpoundFee = 1000         -- retrieve directly from impound
+Config.ImpoundToGarageFee = 2500 -- move impounded vehicle back to garage without spawning
+
+Config.RenameFee = {
+    Enabled = true,
+    Price = 2500
+}
+
+Config.RepairSystem = {
+    Enabled = true,
+    Price = 500
+}</code></pre>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>Valet Service</h3>
+                <pre class="selectable"><code>Config.Valet = {
+    Enable = true,
+    MinPrice = 100,
+    MaxPrice = 5000,
+    MinTime = 1,       -- minutes
+    MaxTime = 10,
+    AirMultiplier = 5, -- aircraft/heli multiply price & time by 5
+    BoatMultiplier = 3 -- boats multiply price & time by 3
+}</code></pre>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>Admin Panel &amp; Permissions</h3>
+                <pre class="selectable"><code>Config.Admin = {
+    Command = 'garageadmin',
+    Permissions = {
+        OpenMenu       = { 'admin', 'superadmin' },
+        ManageGarages  = { 'superadmin' },
+        ManageVehicles = { 'admin', 'superadmin' },
+        ViewLogs       = { 'admin', 'superadmin' },
+        AddVehicles    = { 'superadmin' }
+    }
+}</code></pre>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>Discord Logging</h3>
+                <pre class="selectable"><code>Config.DiscordLogs = {
+    Enabled = true,
+    Webhook = "",          -- paste your Discord webhook URL here
+    BotName = "Our Garage Logs",
+    Color = 3447003
+}</code></pre>
             </div>
 
             <div class="card content-fade-in">
                 <h3>Garage Locations</h3>
-                <p>Open <code>config.lua</code> to define your garage locations, faction garages, and impound lots. Each garage can be customized with name, coordinates, blip settings, and allowed vehicle types.</p>
+                <p>Define each garage in <code>Config.Garages</code>. Supported fields:</p>
+                <pre class="selectable"><code>Config.Garages = {
+    {
+        label = "Garage",          -- name shown in UI / on map
+        type = "car",              -- 'car' | 'boat' | 'aircraft' | 'heli'
+        marker = vector3(x, y, z), -- on-foot interaction point
+        spawnPoints = {
+            vector4(x, y, z, heading)
+        },
+        -- Optional:
+        job = "police",            -- faction garage (ESX job name)
+        isPrivate = false,         -- private garage
+        ownerIdentifier = nil,     -- CSV of identifiers (private only)
+        showBlip = true,
+        showMarker = nil           -- overrides GlobalMarkerVisibility
+    }
+}</code></pre>
+                <p>Garages can also be added <strong>live in-game</strong> via <code>/garageadmin</code> → Garages → Add, using coordinate capture with <code>[E]</code>.</p>
             </div>
 
             <div class="card content-fade-in">
-                <h3>Pricing &amp; Recovery</h3>
-                <p>Configure impound recovery costs, transfer fees, and rename pricing in the config file.</p>
-            </div>
-
-            <div class="card content-fade-in">
-                <h3>Admin Permissions</h3>
-                <p>Set which ESX groups have access to the admin panel via <code>Config.AdminGroups</code> in the config file.</p>
+                <h3>Mileage Unit</h3>
+                <pre class="selectable"><code>Config.MileageSystem = {
+    Enabled = true,
+    Unit = 'km'  -- 'km' or 'mi'
+}</code></pre>
             </div>
         `
     }
