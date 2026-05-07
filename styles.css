@@ -699,13 +699,12 @@ code, pre, .selectable {
 .flagship-media {
     flex: 1.2;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.4); /* Darker to contrast any white artifacts */
-    padding: 2rem;
+    background: transparent;
+    padding: 0;
     border-radius: 16px;
-    /* Removed the border that might be causing white lines */
 }
 
 /* No background/padding variant for high-res UI screenshots */
@@ -736,12 +735,13 @@ code, pre, .selectable {
 
 .flagship-media .content-img {
     max-width: 100%;
+    width: 100%;
     height: auto;
-    max-height: 300px; /* Increased for single image showcase */
+    max-height: 420px;
     object-fit: contain;
     margin: 0;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
-    mix-blend-mode: screen; /* Makes black backgrounds transparent */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
