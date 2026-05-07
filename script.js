@@ -3,7 +3,7 @@ const contentData = {
         title: 'Our Scripts',
         html: `
             <div class="home-page content-fade-in">
-                <img src="assets/logo.png?v=2.0" alt="Logo" class="home-logo" onerror="this.src='https://via.placeholder.com/120/1e293b/ffffff?text=OS'">
+                <img src="assets/logo.png?v=2.1" alt="Logo" class="home-logo" onerror="this.src='https://via.placeholder.com/120/1e293b/ffffff?text=OS'">
                 <h1 class="home-title">Our Scripts</h1>
                 <p class="home-subtitle">High-end FiveM ESX scripts engineered for performance, security, and the ultimate player experience.</p>
                 <div class="social-links">
@@ -333,6 +333,126 @@ Config.CurrencySymbol = '$'</code></pre>
 }</code></pre>
             </div>
         `
+    },
+    'our_garage-intro': {
+        title: 'Garage - Introduction',
+        html: `
+            <div class="page-header content-fade-in">
+                <div class="badge badge-warning">ESX Only</div>
+                <h1>Garage System</h1>
+                <p>A complete and modern garage management system for ESX servers, with an integrated admin panel for full control over your server's vehicles.</p>
+                
+                <div class="quick-links">
+                    <a href="https://www.youtube.com/watch?v=your-video" target="_blank" class="btn-link youtube">
+                        <i data-lucide="play-circle"></i> Video Showcase
+                    </a>
+                    <a href="https://our-scripts-store.tebex.io" target="_blank" class="btn-link store">
+                        <i data-lucide="shopping-bag"></i> Buy Now
+                    </a>
+                    <a href="https://discord.gg/9DbRGCts5W" target="_blank" class="btn-link discord">
+                        <i data-lucide="message-circle"></i> Community Discord
+                    </a>
+                </div>
+            </div>
+            
+            <div class="section-title content-fade-in">
+                <h2>📸 Visual Showcase</h2>
+                <p>A clean, modern interface for managing player vehicles.</p>
+            </div>
+
+            <div class="card content-fade-in shadow-accent flagship-card">
+                <div class="flagship-content">
+                    <div class="flagship-text">
+                        <div class="badge">Garage UI</div>
+                        <h3>Complete Vehicle Management</h3>
+                        <p>Players get a full overview of their vehicles with real-time stats including engine, body, and fuel levels. Includes search, category filters, favorites, and live status indicators (Outside, Impounded, On the way).</p>
+                        <ul class="feature-list-check small">
+                            <li>Real-time vehicle stats</li>
+                            <li>Search and category filtering</li>
+                            <li>Favorites system</li>
+                            <li>Live status indicators</li>
+                            <li>Showroom preview, Rename and Transfer</li>
+                        </ul>
+                    </div>
+                    <div class="flagship-media">
+                        <img src="assets/garage1.png" class="content-img" alt="Garage UI">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card content-fade-in shadow-accent flagship-card">
+                <div class="flagship-content">
+                    <div class="flagship-text">
+                        <div class="badge">Admin Panel</div>
+                        <h3>Built-in Admin Control</h3>
+                        <p>Full server overview with statistics for total vehicles, stored, out, and impounded. Manage Players, Factions, Garages, and Logs - all from one clean interface.</p>
+                        <ul class="feature-list-check small">
+                            <li>Server overview dashboard</li>
+                            <li>Player vehicle management</li>
+                            <li>Faction garage support</li>
+                            <li>Action logs</li>
+                        </ul>
+                    </div>
+                    <div class="flagship-media">
+                        <img src="assets/garage2.png" class="content-img" alt="Admin Panel">
+                    </div>
+                </div>
+            </div>
+        `
+    },
+    'our_garage-install': {
+        title: 'Garage - Installation',
+        html: `
+            <div class="page-header content-fade-in">
+                <h1>Installation</h1>
+                <p>Follow these steps to install the Garage system correctly.</p>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>1. Prerequisites</h3>
+                <p>Ensure you have the following dependencies installed:</p>
+                <ul class="feature-list-check small">
+                    <li><strong>es_extended</strong> - Core framework</li>
+                    <li><strong>oxmysql</strong> - Database driver</li>
+                </ul>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>2. Database Setup</h3>
+                <p>Import the provided <code>install.sql</code> file into your database.</p>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>3. Deployment</h3>
+                <p>Extract the <code>our_garage</code> folder into your server's <code>resources</code> directory.</p>
+                <p>Add the following line to your <code>server.cfg</code>:</p>
+                <pre><code>ensure our_garage</code></pre>
+            </div>
+        `
+    },
+    'our_garage-config': {
+        title: 'Garage - Configuration',
+        html: `
+            <div class="page-header content-fade-in">
+                <h1>Configuration</h1>
+                <p>Customize the Garage system to match your server's needs.</p>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>Garage Locations</h3>
+                <p>Open <code>config.lua</code> to define your garage locations, faction garages, and impound lots. Each garage can be customized with name, coordinates, blip settings, and allowed vehicle types.</p>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>Pricing &amp; Recovery</h3>
+                <p>Configure impound recovery costs, transfer fees, and rename pricing in the config file.</p>
+            </div>
+
+            <div class="card content-fade-in">
+                <h3>Admin Permissions</h3>
+                <p>Set which ESX groups have access to the admin panel via <code>Config.AdminGroups</code> in the config file.</p>
+            </div>
+        `
     }
 };
 
@@ -344,7 +464,10 @@ const allTargets = [
     'our_playerhud-config',
     'our_escmenu-intro',
     'our_escmenu-install',
-    'our_escmenu-config'
+    'our_escmenu-config',
+    'our_garage-intro',
+    'our_garage-install',
+    'our_garage-config'
 ];
 
 let currentTarget = 'home';
